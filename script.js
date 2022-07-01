@@ -2,7 +2,6 @@
 const display = document.querySelector('.display');
 const btns = document.querySelectorAll('.btn');
 const btnContainer = document.querySelector('.btns');
-// const btnsNum = document.querySelector('')
 
 let number;
 let number2;
@@ -49,11 +48,8 @@ btnContainer.addEventListener('click', function (event) {
 
   if (opearators.includes(btnId)) {
     if (number && number2 && !operator) {
-      // number2 = +display.textContent;
       operator = btnId;
       display.textContent = '';
-      // result = operate(operator, number, number2);
-      // display.textContent = result;
       return;
     }
     if (number && number2) {
@@ -64,21 +60,17 @@ btnContainer.addEventListener('click', function (event) {
       return;
     }
     if (number) {
-      // operator = btnId;
-      // display.textContent = '';
       number2 = +display.textContent;
       if (operator === btnId) {
         result = operate(operator, number, number2);
-        console.log(btnId);
         display.textContent = result;
         number = result;
       }
       if (operator !== btnId) {
         result = operate(operator, number, number2);
-        operator = btnId;
-        console.log(btnId, 'sadasd');
         display.textContent = result;
         number = result;
+        operator = btnId;
       }
 
       return;
@@ -94,7 +86,6 @@ btnContainer.addEventListener('click', function (event) {
     display.textContent = result;
     number = result;
     operator = '';
-    // operator = '';
   }
 });
 
